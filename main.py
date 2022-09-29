@@ -43,28 +43,31 @@ Bot = Client(
     api_hash=API_HASH
 )
 
-START_TEXT = """Hello {}, \
-I am a channel auto post telegram bot.
+START_TEXT = """👋 Hello {}, \n\n
+I m Simple And fast Powerfull Channel Auto Post Bot
 
-Made by @FayasNoushad"""
+👨‍💻**Devoloper** - @ImRishmika
+☘**Made By** - @EmoBotDevolopers
+
+"""
 
 BUTTONS = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                'Channel', url='https://telegram.me/FayasNoushad'),
+                '⚡ ємσ вσт ∂єνσℓσρєʀѕ🇰', url='https://telegram.me/EmoBotDevolopers'),
             InlineKeyboardButton(
-                'Feedback', url='https://telegram.me/TheFayas')
+                '♻ FeedBack', url='https://telegram.me/EmoBotSupport')
         ],
         [
             InlineKeyboardButton(
-                'Source Code', url='https://github.com/FayasNoushad/Channel-Auto-Post-Bot')
+                '👨‍💻 Devoloper 👨‍💻', url='https://github.com/RishBroProMax')
         ]
     ]
 )
 
 
-@Bot.on_message(filters.private & filters.command("start"))
+@Bot.on_message(filters.private & filters.command("/start"))
 async def start(_, message):
     await message.reply_text(
         text=START_TEXT.format(message.from_user.mention),
